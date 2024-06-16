@@ -23,7 +23,6 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
-    "tsconfig": "*",
     "turbo": "^2.0.4"
   },
   "engines": {
@@ -32,8 +31,7 @@
   },
   "packageManager": "yarn@1.22.21",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ],
   "dependencies": {},
   "lint-staged": {
