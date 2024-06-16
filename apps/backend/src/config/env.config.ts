@@ -30,6 +30,7 @@ const envConfig = registerAs('env', () => ({
     key: process.env.GEO_DB_KEY || '',
     host: process.env.GEO_DB_HOST || '',
   },
+  githubApiUrl: process.env.GITHUB_API_URL || '',
 }));
 
 export default envConfig;
