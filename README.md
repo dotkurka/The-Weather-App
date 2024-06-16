@@ -4,8 +4,6 @@
 
 - `backend`: a [Nest.js](https://nestjs.com/) backend app
 - `frontend`: a [React.js](https://react.dev/) frontend app
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 ## Useful Links
 

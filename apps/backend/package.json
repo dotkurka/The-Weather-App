@@ -18,11 +18,17 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/axios": "^3.0.2",
     "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^3.2.2",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "axios": "^1.7.2",
+    "qs": "^6.12.1",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rimraf": "^5.0.7",
+    "rxjs": "^7.8.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -67,7 +73,7 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "*.(js|ts)": "eslint --fix",
+    "*.(js|ts|tsx)": "eslint --fix",
     "*.(md|json)": "prettier --write"
   }
 }
