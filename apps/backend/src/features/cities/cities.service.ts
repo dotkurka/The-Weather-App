@@ -24,20 +24,15 @@ export class CitiesService {
     };
   }
 
-  private async fetchCities(
-    namePrefix: string,
-    limit = 10,
-  ): Promise<GeoDbCitiesResponse> {
+  private async fetchCities(namePrefix: string, limit = 10): Promise<GeoDbCitiesResponse> {
     const fetchUrl = `${this.config.geoDb.url}/cities?${stringify({ namePrefix, limit })}`;
     const { data } = await lastValueFrom(
-      this.httpService
-        .get<GeoDbCitiesResponse>(fetchUrl, { headers: this.axiosHeader })
-        .pipe(
-          catchError((error: AxiosError) => {
-            this.logger.error(error.response.data);
-            throw 'An error happened!';
-          }),
-        ),
+      this.httpService.get<GeoDbCitiesResponse>(fetchUrl, { headers: this.axiosHeader }).pipe(
+        catchError((error: AxiosError) => {
+          this.logger.error(error.response.data);
+          throw 'An error happened!';
+        }),
+      ),
     );
 
     return data;
@@ -46,7 +41,8 @@ export class CitiesService {
   async getCities(namePrefix: string, limit = 10): Promise<CityDto[]> {
     const { data } = await this.fetchCities(namePrefix, limit);
 
-    return data.map(({ country, name, countryCode, region }) => ({
+    return data.map(({ country, name, countryCode, region, id }) => ({
+      id,
       name,
       country,
       countryCode,

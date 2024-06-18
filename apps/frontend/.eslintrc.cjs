@@ -12,6 +12,12 @@ module.exports = {
     'plugin:import/typescript',
   ],
   settings: {
+    "import/resolver": {
+      typescript: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        ignorePatterns: ['node_modules', '../../node_modules']
+      },
+    },
     'import/ignore': ['node_modules', '../../node_modules'],
   },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
